@@ -7,8 +7,6 @@
  * for css files. Also automatically links an output file containing precompiled
  * templates using a <script> tag.
  *
- * For usage docs see (the original):
- * 		https://github.com/Zolmeister/grunt-sails-linker
  *
  */
 

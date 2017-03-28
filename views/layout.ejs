@@ -13,7 +13,7 @@
 
         You can always bring in CSS files manually with `<link>` tags, or asynchronously
         using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
-        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+        of Sails' conventional asset pipeline (boilerplate Gulpfile).
 
         By default, stylesheets from your `assets/styles` folder are included
         here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
@@ -29,7 +29,7 @@
     -->
 
     <!--STYLES-->
-    
+    <link rel="stylesheet" href="/styles/production.min.css">
     <!--STYLES END-->
   </head>
 
@@ -46,7 +46,7 @@
         To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
         that you load these templates client-side.
 
-        By default, your Gruntfile is configured to automatically load and precompile
+        By default, your Gulpfile is configured to automatically load and precompile
         client-side JST templates in your `assets/templates` folder, then
         include them here automatically (between TEMPLATES and TEMPLATES END).
 
@@ -88,7 +88,7 @@
     -->
 
     <!--SCRIPTS-->
-    
+    <script src="/js/production.min.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

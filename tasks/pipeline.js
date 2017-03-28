@@ -96,9 +96,7 @@
  // > By default, Sails uses JST (~=lodash/underscore) templates and precompiles
  // > them into functions for you.  If you want to use handlebars, pug, dust, etc.,
  // > with the asset linker, no problem-- you'll just want to make sure the precompiled
- // > templates get spit out to the same file.  For information on customizing and
- // > installing your own Grunt tasks, be sure to check out:
- // >   http://sailsjs.com/docs/concepts/assets/task-automation
+ // > templates get spit out to the same file.
  //
  var templateFilesToInject = [
    'templates/**/*.html'
@@ -122,7 +120,7 @@
  var tmpPath = '.tmp/public/';
 
  // Prefix relative paths to source files so they point to the proper locations
- // (i.e. where the other Grunt tasks spit them out, or in some cases, where
+ // (i.e. where the other Gulp tasks spit them out, or in some cases, where
  // they reside in the first place)
  module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
    // If we're ignoring the file, make sure the ! is at the beginning of the path

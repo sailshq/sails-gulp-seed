@@ -1,0 +1,2 @@
+/* Example CSS file to demonstrate that Gulp will copy .css files to `.tmp/public/css` */
+body { background-color: aliceblue; }

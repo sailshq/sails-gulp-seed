@@ -12,17 +12,8 @@
  * Check out the `tasks` directory instead.
  */
 var gulp = require('gulp'),
-  // plugins = require('gulp-load-plugins')({
-  //   pattern: ['gulp-*', 'merge-*', 'run-*', 'main-*'], // the glob to search for
-  //   replaceString: /\bgulp[\-.]|run[\-.]|merge[\-.]|main[\-.]/, // what to remove from the name of the module when adding it to the context
-  //   camelizePluginName: true, // if true, transforms hyphenated plugins names to camel case
-  //   lazy: true // whether the plugins should be lazy loaded on demand
-  // }),
   path = require('path'),
   growl = false;
-
-//module.exports = function(gulp) {
-
 
 // Load the include-all library in order to require all of our gulp
 // configurations and task registrations dynamically.
@@ -61,7 +52,7 @@ function loadTasks(relPath) {
 }
 
 /**
- * Invokes the function from a Grunt configuration module with
+ * Invokes the function from a Gulp configuration module with
  * a single argument - the `gulp` object.
  */
 function invokeConfigFn(tasks) {
@@ -88,4 +79,3 @@ if (!registerDefinitions.default) {
 invokeConfigFn(taskConfigurations);
 invokeConfigFn(registerDefinitions);
 
-//};
