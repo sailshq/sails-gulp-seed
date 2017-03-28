@@ -8,7 +8,6 @@ module.exports = function (gulp, plugins) {
       'clean:build',
       'copy:build'
     ], function(task, nextTask) {
-      console.log(task);
       gulp.task(task)(nextTask);
     }, cb);
   });
