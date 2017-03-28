@@ -1,10 +1,12 @@
 # sails-gulp-seed
 
-a [Sails](http://sailsjs.com) 1.0 application utilizing the Gulp 4 task runner.
+a [Sails](http://sailsjs.com) 1.0 application utilizing the Gulp 3 task runner.
 
 This app is the result of running `sails new --without grunt` and then adding some files, dependencies and configuration to facilitate a basic Gulp asset pipeline.
 
-> This is just an example of how you can set up your Sails app to work with Gulp.  Refer to the [Gulp documentation](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md) for a full guide to Gulp usage and configuration!
+See the [master branch](https://github.com/sailshq/sails-gulp-seed) for the Gulp 4 seed.
+
+> This is just an example of how you can set up your Sails app to work with Gulp.  Refer to the [Gulp documentation](https://github.com/gulpjs/gulp/blob/master/docs/API.md) for a full guide to Gulp usage and configuration!
 
 ### Links
 
