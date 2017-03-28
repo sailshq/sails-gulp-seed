@@ -31,17 +31,13 @@ module.exports = function(gulp) {
 
   gulp.task('sass:prod', function(cb) {
     return gulp.src('assets/styles/importer.scss')
-      .pipe(renamePlugin({
-        basename: 'production',
-        suffix: '.min'
-      }))
-      .pipe(
-        sassPlugin({
-          outputStyle: 'compressed',
-          ext: '.css'
-        }).on('error', cb)
-      )
-      .pipe(gulp.dest('.tmp/public/concat/'))
+      .pipe(sourcemapsPlugin.init())
+      .pipe(sassPlugin({
+        outputStyle: 'compressed'
+      }).on('error', cb))
+      .pipe(sourcemapsPlugin.write())
+      .pipe(renamePlugin('compiledSass.css'))
+      .pipe(gulp.dest('.tmp'))
       .on('end', cb)
       .on('error', cb);
 

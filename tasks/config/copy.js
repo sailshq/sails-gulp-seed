@@ -14,7 +14,15 @@
 
 module.exports = function(gulp) {
   gulp.task('copy:dev', function(cb) {
-    return gulp.src(['./assets/**/*.!(scss)', '!assets/images{,/**}'])
+    return gulp.src(['./assets/**/*.!(scss)'])
+      .pipe(gulp.dest('.tmp/public'))
+      .on('end', cb)
+      .on('error', cb);
+
+  });
+
+  gulp.task('copy:prod', function(cb) {
+    return gulp.src(['./assets/**/*.!(scss|js|css)','.tmp/concat/**/*'])
       .pipe(gulp.dest('.tmp/public'))
       .on('end', cb)
       .on('error', cb);

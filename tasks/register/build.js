@@ -3,11 +3,12 @@ var async = require('async');
 module.exports = function (gulp, plugins) {
   gulp.task('build', function (cb) {
     async.eachSeries([
-      'compileAssets',
+      'compileAssets:dev',
       'linkAssetsBuild',
       'clean:build',
       'copy:build'
     ], function(task, nextTask) {
+      console.log(task);
       gulp.task(task)(nextTask);
     }, cb);
   });
@@ -15,7 +16,6 @@ module.exports = function (gulp, plugins) {
   gulp.task('build:prod', function (cb) {
     async.eachSeries([
       'compileAssets:prod',
-      'concat',
       'linkAssetsBuild:prod',
       'clean:build',
       'copy:build'

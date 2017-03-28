@@ -8,16 +8,16 @@
  *
  */
 var concatPlugin = require('gulp-concat');
-var renamePlugin = require('gulp-rename');
 var uglifyPlugin = require('gulp-uglify');
+var renamePlugin = require('gulp-rename');
 module.exports = function(gulp) {
 
-  gulp.task('concat', function(cb) {
+  gulp.task('concat-js', function(cb) {
     return gulp.src(require('../pipeline').jsFilesToInject)
       .pipe(concatPlugin('production.js'))
+      .pipe(uglifyPlugin())
       .pipe(renamePlugin({ suffix: '.min' }))
-      .pipe(uglifyPlugin(/* {mangle: true} */))
-      .pipe(gulp.dest('./.tmp/public/concat'))
+      .pipe(gulp.dest('./.tmp/concat/js'))
       .on('end', cb)
       .on('error', cb);
 

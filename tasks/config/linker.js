@@ -168,7 +168,7 @@ module.exports = function(gulp) {
     return gulp.src('.tmp/public/**/*.html')
       // Link the JavaScript
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.js'],
+        scripts: ['.tmp/public/js/production.min.js'],
         startTag: '<!--SCRIPTS-->',
         endTag: '<!--SCRIPTS END-->',
         fileTmpl: '<script src="%s"></script>',
@@ -176,7 +176,7 @@ module.exports = function(gulp) {
       }))
       // Link the styles
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.css', '.tmp/public/styles/**/*.css'],
+        scripts: ['.tmp/public/styles/production.min.css'],
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
         fileTmpl: '<link rel="stylesheet" href="%s">',
@@ -203,7 +203,7 @@ module.exports = function(gulp) {
     return gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
       // Link the JavaScript
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.js'],
+        scripts: ['.tmp/public/js/production.min.js'],
         startTag: '<!--SCRIPTS-->',
         endTag: '<!--SCRIPTS END-->',
         fileTmpl: '<script src="%s"></script>',
@@ -211,7 +211,7 @@ module.exports = function(gulp) {
       }))
       // Link the styles
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.css', '.tmp/public/styles/**/*.css'],
+        scripts: ['.tmp/public/styles/production.min.css'],
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
         fileTmpl: '<link rel="stylesheet" href="%s">',
@@ -238,7 +238,7 @@ module.exports = function(gulp) {
     return gulp.src('.tmp/public/**/*.html')
       // Link the JavaScript
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.js'],
+        scripts: ['.tmp/public/js/production.min.js'],
         startTag: '<!--SCRIPTS-->',
         endTag: '<!--SCRIPTS END-->',
         fileTmpl: '<script src="%s"></script>',
@@ -247,7 +247,7 @@ module.exports = function(gulp) {
       }))
       // Link the styles
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.css'],
+        scripts: ['.tmp/public/styles/production.min.css'],
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
         fileTmpl: '<link rel="stylesheet" href="%s">',
@@ -275,7 +275,7 @@ module.exports = function(gulp) {
     return gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
       // Link the JavaScript
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.js'],
+        scripts: ['.tmp/public/js/production.min.js'],
         startTag: '<!--SCRIPTS-->',
         endTag: '<!--SCRIPTS END-->',
         fileTmpl: '<script src="%s"></script>',
@@ -284,7 +284,7 @@ module.exports = function(gulp) {
       }))
       // Link the styles
       .pipe(linkerPlugin({
-        scripts: ['.tmp/public/concat/production.min.css'],
+        scripts: ['.tmp/public/styles/production.min.css'],
         startTag: '<!--STYLES-->',
         endTag: '<!--STYLES END-->',
         fileTmpl: '<link rel="stylesheet" href="%s">',
