@@ -1,12 +1,10 @@
-var async = require('async');
+var runSequence = require('run-sequence');
 
 module.exports = function (gulp, plugins) {
   gulp.task('linkAssets', function(cb) {
-    async.eachSeries([
+    runSequence(
       'sails-linker-gulp:devAssets',
-      'sails-linker-gulp:devViews'
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, cb);
+      'sails-linker-gulp:devViews',
+      cb);
   });
 };

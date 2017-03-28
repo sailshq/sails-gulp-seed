@@ -12,7 +12,7 @@ var coffeePlugin = require('gulp-coffee');
 
 module.exports = function(gulp) {
   gulp.task('coffee', function(cb) {
-    return gulp.src('assets/**/*.coffee')
+    gulp.src('assets/**/*.coffee')
       .pipe(coffeePlugin({
         bare: true
       }))

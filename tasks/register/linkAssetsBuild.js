@@ -1,21 +1,17 @@
-var async = require('async');
+var runSequence = require('run-sequence');
 
 module.exports = function (gulp, plugins) {
   gulp.task('linkAssetsBuild', function(cb) {
-    async.eachSeries([
+    runSequence(
       'sails-linker-gulp:devAssetsRelative',
-      'sails-linker-gulp:devViewsRelative'
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, cb);
+      'sails-linker-gulp:devViewsRelative',
+      cb);
   });
 
   gulp.task('linkAssetsBuild:prod', function(cb) {
-    async.eachSeries([
+    runSequence(
       'sails-linker-gulp:prodAssetsRelative',
-      'sails-linker-gulp:prodViewsRelative'
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, cb);
+      'sails-linker-gulp:prodViewsRelative',
+      cb);
   });
 };

@@ -1,13 +1,11 @@
-var async = require('async');
+var runSequence = require('run-sequence');
 
 module.exports = function (gulp, plugins) {
   gulp.task('prod', function(cb) {
-    async.eachSeries([
+    runSequence(
       'compileAssets:prod',
       'sails-linker-gulp:prodAssets',
       'sails-linker-gulp:prodViews',
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, cb);
+      cb);
   });
 };

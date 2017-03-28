@@ -17,11 +17,11 @@ var sourcemapsPlugin = require('gulp-sourcemaps');
 module.exports = function(gulp) {
 
   gulp.task('sass:dev', function(cb) {
-    return gulp.src('assets/styles/importer.scss')
+    gulp.src('assets/styles/importer.scss')
       .pipe(sourcemapsPlugin.init())
       .pipe(sassPlugin({
         outputStyle: 'compressed'
-      }).on('error', cb))
+      }))
       .pipe(sourcemapsPlugin.write())
       .pipe(gulp.dest('.tmp/public/styles/'))
       .on('end', cb)
@@ -30,7 +30,7 @@ module.exports = function(gulp) {
   });
 
   gulp.task('sass:prod', function(cb) {
-    return gulp.src('assets/styles/importer.scss')
+    gulp.src('assets/styles/importer.scss')
       .pipe(sourcemapsPlugin.init())
       .pipe(sassPlugin({
         outputStyle: 'compressed'

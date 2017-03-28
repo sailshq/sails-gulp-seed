@@ -15,7 +15,7 @@ var concatPlugin = require('gulp-concat');
 
 module.exports = function(gulp) {
   gulp.task('jst:dev', function(cb) {
-    return gulp.src(require('../pipeline').templateFilesToInject)
+    gulp.src(require('../pipeline').templateFilesToInject)
       .pipe(templateCompilePlugin({
         name: function(file) {
           return 'assets/templates/' + file.relative;

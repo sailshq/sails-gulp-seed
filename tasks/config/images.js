@@ -7,7 +7,7 @@
  */
 module.exports = function(gulp) {
   gulp.task('images', function(cb) {
-    return (gulp.src('assets/images/**/*')
+    (gulp.src('assets/images/**/*')
       .pipe(gulp.dest('.tmp/public/images')))
       .on('end', cb)
       .on('error', cb);
@@ -17,7 +17,7 @@ module.exports = function(gulp) {
   });
 
   gulp.task('images:prod', function(cb) {
-    return gulp.src('assets/images/**/*')
+    gulp.src('assets/images/**/*')
       .pipe(gulp.dest('.tmp/public/images'))
       .on('end', cb)
       .on('error', cb);

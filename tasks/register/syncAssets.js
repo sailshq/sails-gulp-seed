@@ -1,12 +1,10 @@
-var async = require('async');
+var runSequence = require('run-sequence');
 
 module.exports = function (gulp, plugins) {
   gulp.task('syncAssets', function(cb) {
-    async.eachSeries([
+    runSequence(
       'compileAssets:dev',
-      'linkAssets'
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, cb);
+      'linkAssets',
+      cb);
   });
 };

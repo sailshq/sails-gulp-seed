@@ -1,23 +1,19 @@
-var async = require('async');
+var runSequence = require('run-sequence');
 
 module.exports = function (gulp, plugins) {
   gulp.task('compileAssets:dev', function(cb) {
-    async.eachSeries([
+    runSequence(
       'clean:dev',
       'jst:dev',
       'sass:dev',
       'coffee',
-      'copy:dev'
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, function(err) {
-      if (err) { console.error(err); }
-      return cb();
-    });
+      'copy:dev',
+      cb
+    );
   });
 
   gulp.task('compileAssets:prod', function(cb) {
-    async.eachSeries([
+    runSequence(
       'clean:dev',
       'clean:compiledSass',
       'clean:concat',
@@ -28,9 +24,7 @@ module.exports = function (gulp, plugins) {
       'concat-css',
       'concat-js',
       'clean:dev',
-      'copy:prod'
-    ], function(task, nextTask) {
-      gulp.task(task)(nextTask);
-    }, cb);
+      'copy:prod',
+      cb);
   });
 };

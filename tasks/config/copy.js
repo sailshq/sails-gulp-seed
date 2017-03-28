@@ -14,7 +14,7 @@
 
 module.exports = function(gulp) {
   gulp.task('copy:dev', function(cb) {
-    return gulp.src(['./assets/**/*.!(scss|coffee)'])
+    gulp.src(['./assets/**/*.!(scss|coffee)'])
       .pipe(gulp.dest('.tmp/public'))
       .on('end', cb)
       .on('error', cb);
@@ -22,7 +22,7 @@ module.exports = function(gulp) {
   });
 
   gulp.task('copy:prod', function(cb) {
-    return gulp.src(['./assets/**/*.!(scss|js|css|coffee)','.tmp/concat/**/*'])
+    gulp.src(['./assets/**/*.!(scss|js|css|coffee)','.tmp/concat/**/*'])
       .pipe(gulp.dest('.tmp/public'))
       .on('end', cb)
       .on('error', cb);
@@ -30,7 +30,7 @@ module.exports = function(gulp) {
   });
 
   gulp.task('copy:build', function(cb) {
-    return gulp.src(['./.tmp/public/**/*'])
+    gulp.src(['./.tmp/public/**/*'])
       .pipe(gulp.dest('www'))
       .on('end', cb)
       .on('error', cb);

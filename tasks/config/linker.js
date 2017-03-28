@@ -16,9 +16,8 @@ module.exports = function(gulp) {
 
   // Insert JS, CSS and template dev links into HTML files in the tmp assets folder
   gulp.task('sails-linker-gulp:devAssets', function(cb) {
-
     // Read Templates
-    return gulp.src('.tmp/public/**/*.html')
+    gulp.src('.tmp/public/**/*.html')
       // Link the javaScript
       .pipe(linkerPlugin({
         scripts: [require('../pipeline').jsFilesToInject],
@@ -54,7 +53,7 @@ module.exports = function(gulp) {
   gulp.task('sails-linker-gulp:devViews', function(cb) {
 
     // Read templates
-    return gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
+    gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
 
       // Link the javaScript
       .pipe(linkerPlugin({
@@ -89,7 +88,7 @@ module.exports = function(gulp) {
   // Insert relative JS, CSS and template dev links into HTML files in the tmp assets folder
   gulp.task('sails-linker-gulp:devAssetsRelative', function(cb) {
     // Read templates
-    return gulp.src('.tmp/public/**/*.html')
+    gulp.src('.tmp/public/**/*.html')
       // Link the JavaScript
       .pipe(linkerPlugin({
         scripts: [require('../pipeline').jsFilesToInject],
@@ -126,7 +125,7 @@ module.exports = function(gulp) {
   // Insert relative JS, CSS and template dev links into HTML and HANDLEBARS files in the views folder
   gulp.task('sails-linker-gulp:devViewsRelative', function(cb) {
     // Read templates
-    return gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
+    gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
       // Link the javaScript
       .pipe(linkerPlugin({
         scripts: [require('../pipeline').jsFilesToInject],
@@ -163,7 +162,7 @@ module.exports = function(gulp) {
   // Insert JS, CSS and template production links into HTML files in the tmp assets folder
   gulp.task('sails-linker-gulp:prodAssets', function(cb) {
     // Read templates
-    return gulp.src('.tmp/public/**/*.html')
+    gulp.src('.tmp/public/**/*.html')
       // Link the JavaScript
       .pipe(linkerPlugin({
         scripts: ['.tmp/public/js/production.min.js'],
@@ -198,7 +197,7 @@ module.exports = function(gulp) {
   // Insert JS, CSS and template production links into HTML and HANDLEBARS files in the views folder
   gulp.task('sails-linker-gulp:prodViews', function(cb) {
     // Read templates
-    return gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
+    gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
       // Link the JavaScript
       .pipe(linkerPlugin({
         scripts: ['.tmp/public/js/production.min.js'],
@@ -233,7 +232,7 @@ module.exports = function(gulp) {
   // Insert relative JS, CSS and template production links into HTML files in the tmp assets folder
   gulp.task('sails-linker-gulp:prodAssetsRelative', function(cb) {
     // Read templates
-    return gulp.src('.tmp/public/**/*.html')
+    gulp.src('.tmp/public/**/*.html')
       // Link the JavaScript
       .pipe(linkerPlugin({
         scripts: ['.tmp/public/js/production.min.js'],
@@ -270,7 +269,7 @@ module.exports = function(gulp) {
   // Insert relative JS, CSS and template production links into HTML and HANDLEBARS files in the views folder
   gulp.task('sails-linker-gulp:prodViewsRelative', function(cb) {
     // Read templates
-    return gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
+    gulp.src(['views/**/*.html', 'views/**/*.handlebars', 'views/**/*.ejs'])
       // Link the JavaScript
       .pipe(linkerPlugin({
         scripts: ['.tmp/public/js/production.min.js'],

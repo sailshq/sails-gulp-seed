@@ -20,7 +20,7 @@ module.exports = function(gulp) {
     var watcher = gulp.watch('assets/**/*');
     watcher.on('change', function(err) {
       try {
-        gulp.task('syncAssets')();
+        gulp.start('syncAssets');
       } catch(e) {
       }
     });

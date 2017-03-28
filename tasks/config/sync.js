@@ -15,7 +15,7 @@ var changedPlugin = require('gulp-changed');
 
 module.exports = function(gulp) {
   gulp.task('sync:dev', function(cb) {
-    return gulp.src(['./assets/**/*.!(scss)', '!assets/images{,/**}'])
+    gulp.src(['./assets/**/*.!(scss)', '!assets/images{,/**}'])
       .pipe(changedPlugin('.tmp/public'))
       .pipe(gulp.dest('.tmp/public'))
       .on('end', cb)

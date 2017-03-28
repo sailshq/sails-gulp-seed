@@ -6,11 +6,11 @@ module.exports = function(sails) {
       var gulp = require('gulp');
       require('../../../gulpfile');
       if (process.env.NODE_ENV === 'production') {
-        gulp.task('prod')(cb);
+        gulp.start('prod', cb);
         return;
       }
 
-      gulp.task('default')(cb);
+      gulp.start('default', cb);
 
     }
 

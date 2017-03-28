@@ -13,7 +13,7 @@ var renamePlugin = require('gulp-rename');
 module.exports = function(gulp) {
 
   gulp.task('concat-css', function(cb) {
-    return gulp.src(require('../pipeline').cssFilesToInject.concat(['.tmp/compiledSass.css']))
+    gulp.src(require('../pipeline').cssFilesToInject.concat(['.tmp/compiledSass.css']))
       .pipe(concatPlugin('production.css'))
       .pipe(cssMinPlugin())
       .pipe(renamePlugin({ suffix: '.min' }))
