@@ -6,6 +6,7 @@ module.exports = function (gulp, plugins) {
       'clean:dev',
       'jst:dev',
       'sass:dev',
+      'coffee',
       'copy:dev'
     ], function(task, nextTask) {
       gulp.task(task)(nextTask);
@@ -23,6 +24,7 @@ module.exports = function (gulp, plugins) {
       'jst:dev',
       'sass:prod',
       'copy:dev',
+      'coffee',
       'concat-css',
       'concat-js',
       'clean:dev',

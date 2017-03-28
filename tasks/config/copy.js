@@ -14,7 +14,7 @@
 
 module.exports = function(gulp) {
   gulp.task('copy:dev', function(cb) {
-    return gulp.src(['./assets/**/*.!(scss)'])
+    return gulp.src(['./assets/**/*.!(scss|coffee)'])
       .pipe(gulp.dest('.tmp/public'))
       .on('end', cb)
       .on('error', cb);
@@ -22,7 +22,7 @@ module.exports = function(gulp) {
   });
 
   gulp.task('copy:prod', function(cb) {
-    return gulp.src(['./assets/**/*.!(scss|js|css)','.tmp/concat/**/*'])
+    return gulp.src(['./assets/**/*.!(scss|js|css|coffee)','.tmp/concat/**/*'])
       .pipe(gulp.dest('.tmp/public'))
       .on('end', cb)
       .on('error', cb);
